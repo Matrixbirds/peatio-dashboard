@@ -1,0 +1,31 @@
+{{#paper-sidenav-container class="inner-sidenav" lockedOpen=true open=false}}
+
+  {{#paper-sidenav
+    class="md-whiteframe-z2"
+    name="left"
+    open=leftSideBarOpen
+    onToggle=(action (mut leftSideBarOpen))}}
+    {{#paper-toolbar as |toolbar|}}
+      {{#paper-toolbar-tools}}Peatio Admin{{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+    {{#each items as |menu|}}
+      {{#paper-content padding=true}}
+        {{menu.name}}
+      {{/paper-content}}
+
+      {{#if menu.childs }}
+        <ul>
+          {{#each menu.childs as |child| }}
+            {{#paper-content padding=true}}
+            {{child.name}}
+            {{/paper-content}}
+          {{/each}}
+        </ul>
+      {{/if}}
+
+    {{/each}}
+
+  {{/paper-sidenav}}
+
+{{/paper-sidenav-container}}

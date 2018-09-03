@@ -4,7 +4,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'toastio-admin',
     environment,
-    rootURL: '/',
+    rootURL: '/admin/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
